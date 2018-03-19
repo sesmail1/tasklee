@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>taskLee</title>
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <div class="container">
+        <div class="header clearfix">
+            <nav>
+
+                <ul class="nav nav-pills pull-right">
+                    {{#if user}}
+                    <li class="presentation"><a href="/"><span class="glyphicon glyphicon-user"></span> {{user.name}}</a></li>
+                    <li role="presentation"><a href="/users/logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+                    {{else}}
+                    <li role="presentation"><a href="/users/login">          <span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                    <li role="presentation"><a href="/users/register"><span class="glyphicon glyphicon-pencil"></span> Register</a></li>
+                    {{/if}}
+                </ul>
+            </nav>
+            <a class="tasklee" href="/">
+                <h3 class="tasklee"><img height="40" width="40" src="https://image.freepik.com/free-icon/man-practising-karate_318-29307.png"
+                        alt=""> taskLee
+                </h3>
+            </a>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12">
+
+                {{#if success_msg}}
+                <div class="alert alert-success">{{success_msg}}</div>
+                {{/if}} {{#if error_message}}
+                <div class="alert alert-danger">{{error_message}}</div>
+                {{/if}} {{#if error}}
+                <div class="alert alert-danger">{{error}}</div>
+                {{/if}} 
+                {{{body}}} 
+            </div>
+
+        </div>
+
+        <footer class="navbar-default navbar navbar-fixed-bottom footer">
+            <p>&copy; 2017 taskLee, Inc.</p>
+        </footer>
+
+    </div>
+    <!-- /container -->
+
+</body>
+
+</html>
